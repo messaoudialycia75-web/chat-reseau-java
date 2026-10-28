@@ -6,16 +6,18 @@ public class serveur{
     int port = 1234;
     try (ServerSocket sv = new ServerSocket(port)){
 
-        system.out.println ("ce serveur est demaré et ecoute sur le port "+port+);
+        System.out.println("ce serveur est demaré et ecoute sur le port "+ port);
        
-       // accepte( met le program en pose jusqu'a que u clietn essai de se connecter
+       // accepte met le program en pose jusqu'a que u clietn essai de se connecter
        
        
-       Socket sc = new ServerSocket.accepte ();// le serveur client cv 
-       system.out.println("un clietn vient de se connect, adress:  "+ socketClient.getRemoteSocketAddress()+)
+       Socket sc = sv.accept();// le serveur client cv 
+       System.out.println("un client vient de se connect, adress:  "+ sc.getRemoteSocketAddress());
 
 
-    }
+    }catch (Exception e) {
+            System.out.println("Erreur : " + e.getMessage());
+        }
  }
 
 
