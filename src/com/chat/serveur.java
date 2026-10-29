@@ -19,8 +19,16 @@ public class serveur{
        // on ajoute le flux entran (le message )
         InputStream input = sc.getInputStream();
         BufferedReader reader = new BufferedReader(new InputStreamReader(input));
-       String message= reader.readLine();
-       System.out.println(" Message reçu du client : " + message);
+        // pour que le serveur recoir des msgs en boucle
+        String message;
+      while((message = reader.readLine()) != null){
+       if (message.equalsIgnoreCase("exit")){
+        System.out.println("decconextion du client");
+        break;
+       }
+        System.out.println(" Message reçu du client : " + message);
+      }
+       
 
 
     }catch (Exception e) {
